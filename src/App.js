@@ -1,5 +1,6 @@
-import DirectoryContainer from "./pages/Directory";
+import React from "react";
+import Directory from "./pages/Directory";
 
-const App = () => <DirectoryContainer />;
+const App = () => <Directory />;
 
 export default App;
