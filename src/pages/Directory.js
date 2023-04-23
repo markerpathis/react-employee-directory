@@ -10,11 +10,10 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Directory() {
   return (
-    <Navbar variant="dark" bg="dark">
-      <Container>
-        <Navbar.Brand>Employee Directory</Navbar.Brand>
-      </Container>
-    </Navbar>
+    <div>
+      <Header />
+      <Searchbar />
+    </div>
   );
 }
 export default Directory;
