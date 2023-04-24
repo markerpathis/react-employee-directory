@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import moment from "moment";
 
-function DirectoryTable(props) {
+function DirectoryTable({ search }) {
   const [users, setUsers] = useState([]);
 
   const apiUrl = "https://randomuser.me/api/?results=200&nat=u";
@@ -12,7 +12,7 @@ function DirectoryTable(props) {
   async function getRandomUsers() {
     const response = await fetch(apiUrl);
     const responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
     setUsers(responseData.results);
   }
 
@@ -21,22 +21,27 @@ function DirectoryTable(props) {
   }, []);
 
   const populateUserData = () => {
-    return users.map((user, index) => {
-      const dobFormatted = moment.utc(user.dob.date).format("MM-DD-YYYY");
-      return (
-        <tr key={index}>
-          <td>
-            <img src={user.picture.thumbnail} />
-          </td>
-          <td>
-            {user.name.first} {user.name.last}
-          </td>
-          <td>{user.phone}</td>
-          <td>{user.email}</td>
-          <td>{dobFormatted}</td>
-        </tr>
-      );
-    });
+    return users
+      .filter((user) => {
+        const fullName = `${user.name.first} ${user.name.last}`;
+        return search === "" ? user : fullName.toLowerCase().includes(search.toLowerCase());
+      })
+      .map((user, index) => {
+        const dobFormatted = moment.utc(user.dob.date).format("MM-DD-YYYY");
+        return (
+          <tr key={index}>
+            <td>
+              <img src={user.picture.thumbnail} />
+            </td>
+            <td>
+              {user.name.first} {user.name.last}
+            </td>
+            <td>{user.phone}</td>
+            <td>{user.email}</td>
+            <td>{dobFormatted}</td>
+          </tr>
+        );
+      });
   };
 
   return (
