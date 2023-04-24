@@ -2,13 +2,16 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 
+const styles = {
+  header: {
+    background: "#A8DADC",
+  },
+};
 function Header() {
   return (
-    <Navbar variant="dark" bg="dark">
-      <Container>
-        <Navbar.Brand>Employee Directory</Navbar.Brand>
-      </Container>
-    </Navbar>
+    <Container fluid className="d-flex flex-column align-items-center justify-content-center" style={{ height: 100, background: "#A8DADC" }}>
+      <h2>Employee Directory</h2>
+    </Container>
   );
 }
 export default Header;
