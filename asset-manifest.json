@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-employee-directory/static/css/main.c2cab247.css",
+    "main.js": "/react-employee-directory/static/js/main.f8626cea.js",
+    "static/js/787.a6e0392d.chunk.js": "/react-employee-directory/static/js/787.a6e0392d.chunk.js",
+    "index.html": "/react-employee-directory/index.html",
+    "main.c2cab247.css.map": "/react-employee-directory/static/css/main.c2cab247.css.map",
+    "main.f8626cea.js.map": "/react-employee-directory/static/js/main.f8626cea.js.map",
+    "787.a6e0392d.chunk.js.map": "/react-employee-directory/static/js/787.a6e0392d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2cab247.css",
+    "static/js/main.f8626cea.js"
+  ]
+}
